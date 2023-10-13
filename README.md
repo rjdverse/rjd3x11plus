@@ -1,1 +1,5 @@
-# rjd3x11plus
+# rjd3x11plus 
+
+## high frequency data
+
+## trend cycle estimation
