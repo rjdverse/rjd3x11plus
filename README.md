@@ -1,7 +1,7 @@
 # rjd3x11plus: extended x11
 
-## high frequency data
+## High frequency data
 
 infra monthly data
 
-## trend cycle estimation
+## Trend cycle estimation
