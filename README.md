@@ -6,8 +6,8 @@ To get the current stable version (from the latest release):
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("rjdemetra/rjd3toolkit@v3.1.0")
-remotes::install_github("rjdemetra/rjd3x11plus@v1.0.0")
+remotes::install_github("rjdemetra/rjd3toolkit@*release")
+remotes::install_github("rjdemetra/rjd3x11plus@*release")
 ```
 
 To get the current development version from GitHub:
