@@ -38,13 +38,16 @@ x11plus<-function(y, period, mul=TRUE, trend.horizon=6, trend.degree=2,
     i=rjd3toolkit::.proc_vector(jrslt, "d13")
   )
   parameters<-list(
+    period=period,
     multiplicative=mul,
     trend.horizon=trend.horizon,
     trend.degree=trend.degree,
     trend.kernel=trend.kernel,
     trend.asymmetric=trend.asymmetric,
     extreme.lsig=extreme.lsig,
-    extreme.usig=extreme.usig
+    extreme.usig=extreme.usig,
+    seas.s0=seas.s0,
+    seas.s1=seas.s1
   )
 
   return(structure(list(
