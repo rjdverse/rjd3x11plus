@@ -42,6 +42,13 @@ x11plus(
 
 \item{extreme.usig}{upper boundary used for outlier correction in irregular.}
 }
+\value{
+An object of the class 'JD3_X11PLUS', containg the decomposition and the parameters
+}
 \description{
 Perform an X-11 like decomposition with any (non integer) periodicity.
+}
+\examples{
+q<-x11plus(rjd3toolkit::ABS$X0.2.09.10.M, 12)
+
 }
