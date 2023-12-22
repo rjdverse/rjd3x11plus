@@ -83,4 +83,3 @@ henderson<-function(x, length, musgrave=TRUE, ic=4.5){
     result <- ts(result,start = start(x), frequency = frequency(x))
   return (result)
 }
-

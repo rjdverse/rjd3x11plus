@@ -22,6 +22,3 @@ macurves <- function(seas_filter = c("S3X3", "S3X1", "S3X5", "S3X9", "S3X15"), p
                        P, seas_opt)
   rjd3filters::.jd2r_finitefilters(seasFilter)
 }
-
-
-
