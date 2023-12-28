@@ -33,8 +33,9 @@ x11plus<-function(y, period, mul=TRUE, trend.horizon=6, trend.degree=2,
   seas1=match.arg(seas.s1)
   tkernel=match.arg(trend.kernel)
   asym=match.arg(trend.asymmetric)
-  jrslt<-.jcall("jdplus/x12plus/base/r/X11Decomposition", "Ljdplus/x12plus/base/r/X11Decomposition$Results;", "process", as.numeric(y), period, mul
-                , as.integer(trend.horizon), as.integer(trend.degree),
+  jrslt<-.jcall("jdplus/x12plus/base/r/X11Decomposition", "Ljdplus/x12plus/base/r/X11Decomposition$Results;", "process",
+                as.numeric(y), period, mul,
+                as.integer(trend.horizon), as.integer(trend.degree),
                 tkernel, asym, seas0, seas1, extreme.lsig, extreme.usig)
   decomposition<-list(
     y=as.numeric(y),
@@ -78,7 +79,7 @@ x11plus<-function(y, period, mul=TRUE, trend.horizon=6, trend.degree=2,
 #' henderson(q$decomposition$sa, 13)
 henderson<-function(x, length, musgrave=TRUE, ic=4.5){
   result <- .jcall("jdplus/x12plus/base/r/X11Decomposition", "[D", "henderson",
-                   -                   as.numeric(x), as.integer(length), musgrave, ic)
+                   as.numeric(x), as.integer(length), musgrave, ic)
   if(is.ts(x))
     result <- ts(result,start = start(x), frequency = frequency(x))
   return (result)
