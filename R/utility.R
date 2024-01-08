@@ -5,4 +5,3 @@
          "Ljdplus/toolkit/base/api/data/DoubleSeq;",
          "of", as.numeric(x))
 }
-
