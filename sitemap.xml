@@ -4,6 +4,12 @@
     <loc>/404.html</loc>
   </url>
   <url>
+    <loc>/articles/X11.html</loc>
+  </url>
+  <url>
+    <loc>/articles/index.html</loc>
+  </url>
+  <url>
     <loc>/authors.html</loc>
   </url>
   <url>
@@ -13,9 +19,24 @@
     <loc>/reference/henderson.html</loc>
   </url>
   <url>
+    <loc>/reference/ic_ratio.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
   </url>
   <url>
+    <loc>/reference/macurves.html</loc>
+  </url>
+  <url>
+    <loc>/reference/select_trend_filter.html</loc>
+  </url>
+  <url>
+    <loc>/reference/x11_extreme_values_corr.html</loc>
+  </url>
+  <url>
     <loc>/reference/x11plus.html</loc>
+  </url>
+  <url>
+    <loc>/reference/x11plus_trend.html</loc>
   </url>
 </urlset>

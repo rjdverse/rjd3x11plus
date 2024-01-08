@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rjd3x11plus</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
@@ -25,6 +25,16 @@
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu"><li>
+      <a href="../articles/X11.html">Decomposition of X-11 algorithm</a>
+    </li>
+  </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/jdemetra/rjdemetra3/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
@@ -50,12 +60,12 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">henderson</span><span class="op">(</span><span class="va">y</span>, <span class="va">length</span>, musgrave <span class="op">=</span> <span class="cn">TRUE</span>, ic <span class="op">=</span> <span class="fl">4.5</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">henderson</span><span class="op">(</span><span class="va">x</span>, <span class="va">length</span>, musgrave <span class="op">=</span> <span class="cn">TRUE</span>, ic <span class="op">=</span> <span class="fl">4.5</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>y</dt>
+    <dl><dt>x</dt>
 <dd><p>input time-series.</p></dd>
 
 
@@ -71,7 +81,81 @@
 <dd><p>ic ratio: irregular/trend-cycle.</p></dd>
 
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    
 
+<p>A numeric array corresponding to the the trend</p>
+    </div>
+
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">q</span><span class="op">&lt;-</span><span class="fu"><a href="x11plus.html">x11plus</a></span><span class="op">(</span><span class="fu">rjd3toolkit</span><span class="fu">::</span><span class="va">ABS</span><span class="op">$</span><span class="va">X0.2.09.10.M</span>, <span class="fl">12</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">henderson</span><span class="op">(</span><span class="va">q</span><span class="op">$</span><span class="va">decomposition</span><span class="op">$</span><span class="va">sa</span>, <span class="fl">13</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  485.8540  486.4484  487.3105  488.7396  490.0176  487.9782  482.9898</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [8]  479.8038  480.9263  487.3221  496.5854  505.4065  511.1543  512.4367</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [15]  510.6293  509.2964  509.7367  512.4168  515.5694  517.2327  518.7844</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [22]  522.2355  527.9771  536.3347  545.5054  554.0541  561.3792  566.3207</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [29]  569.4497  572.3163  574.0069  575.6387  580.9365  590.1540  602.1486</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [36]  615.7956  628.0916  637.0528  642.0319  643.5963  643.6653  643.7916</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [43]  644.7739  644.4443  644.7079  644.7712  646.6530  649.5366  654.1073</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [50]  662.7391  671.6338  678.9489  684.2098  687.8832  690.7006  693.9177</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [57]  697.1601  698.7642  703.3705  709.0641  715.0876  721.2473  726.2097</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [64]  729.0928  727.9030  724.5799  722.9329  726.5882  735.4284  747.6797</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [71]  758.7773  764.1316  764.7881  761.4194  756.9666  757.0111  761.4718</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [78]  768.0821  774.9714  779.9381  781.4355  780.8888  779.4668  779.7466</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [85]  784.0814  790.9910  799.0251  805.8853  810.5298  813.3947  814.2058</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [92]  813.0935  812.2918  813.6067  815.7914  819.7348  824.3434  828.2263</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [99]  830.7305  830.3138  827.9516  825.3193  823.8029  823.2505  825.0464</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [106]  824.9842  821.9993  820.5095  820.7034  824.9205  832.5594  840.7012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [113]  847.0484  852.9173  856.9520  859.4280  862.3773  865.8502  870.6405</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [120]  871.8380  869.6752  867.5456  866.5933  868.1664  872.6577  878.3963</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [127]  883.3563  887.2466  887.3798  886.8981  888.7331  890.8429  892.7785</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [134]  892.3797  889.3614  886.1950  884.2835  883.3753  886.2490  892.3990</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [141]  898.3541  904.1788  908.8273  911.9348  913.5149  914.1548  915.4560</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [148]  919.8651  926.3901  932.4873  934.5441  932.7254  930.3145  928.9592</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [155]  929.4810  935.8169  945.5621  954.3998  960.0378  962.2612  961.2901</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [162]  961.6986  963.8693  966.8661  970.1072  973.4638  973.9440  973.2257</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [169]  971.7344  971.2772  971.4808  971.1677  969.4942  966.3980  965.2945</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [176]  966.8690  972.1981  976.6293  977.9740  974.0498  967.2711  964.4913</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [183]  967.6778  975.4561  987.2433  999.9955 1007.5594 1009.2969 1009.8626</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [190] 1006.1211 1002.0754  997.5921  995.3623  996.6274 1002.5577 1011.4097</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [197] 1021.9796 1030.8476 1038.2436 1042.8221 1045.1109 1044.8496 1042.9892</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [204] 1036.9905 1032.0549 1031.2450 1036.1681 1047.6171 1061.0420 1073.1516</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [211] 1080.8078 1082.5572 1077.8803 1078.7428 1084.6400 1089.9818 1095.5690</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [218] 1100.5899 1104.1718 1106.6948 1108.9721 1111.1500 1114.6796 1120.6996</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [225] 1128.2189 1133.9710 1137.0492 1143.1683 1143.4647 1138.1963 1131.6732</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [232] 1128.7513 1132.6155 1143.2322 1157.7703 1170.4865 1180.0633 1186.7398</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [239] 1190.0629 1191.0039 1191.5676 1190.8849 1190.9808 1194.6318 1204.3904</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [246] 1219.7514 1236.3584 1250.3737 1260.9386 1267.2536 1271.6767 1275.5156</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [253] 1277.7469 1280.6766 1284.2714 1288.4286 1295.8726 1307.8080 1321.3659</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [260] 1332.2893 1336.9930 1338.0757 1340.7997 1346.7034 1356.2530 1368.5640</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [267] 1380.7242 1389.1303 1392.4970 1389.0683 1388.2967 1392.4979 1395.3600</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [274] 1396.2067 1393.4474 1388.8579 1384.7088 1381.0583 1380.1015 1383.3431</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [281] 1386.6760 1385.9707 1379.1786 1372.0621 1373.0201 1378.2079 1385.5755</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [288] 1398.4454 1411.6162 1419.7216 1421.3823 1418.2757 1413.7799 1409.6871</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [295] 1409.3257 1414.2355 1422.5529 1434.0672 1444.1298 1452.7100 1462.2451</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [302] 1474.5290 1486.5177 1495.5001 1501.8397 1507.3805 1512.7335 1517.7541</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [309] 1526.9821 1533.1672 1534.4246 1529.8961 1521.0498 1512.6731 1506.3157</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [316] 1504.3472 1511.2729 1522.2904 1530.2554 1534.1485 1539.2153 1548.2424</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [323] 1561.1612 1571.9930 1579.2074 1581.0422 1579.4138 1574.7339 1569.5731</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [330] 1567.7157 1571.4665 1573.7872 1568.8805 1558.5744 1549.2429 1542.6646</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [337] 1541.6342 1545.6262 1551.6656 1557.5724 1560.1938 1557.7868 1549.7361</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [344] 1539.9001 1533.8012 1531.8364 1531.8667 1532.1465 1531.3913 1526.7037</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [351] 1518.4547 1509.3891 1500.8070 1495.0792 1494.3351 1497.5027 1500.0771</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [358] 1509.1870 1521.3750 1532.5616 1540.9503 1544.9754 1544.0865 1539.2989</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [365] 1532.2800 1524.9251 1520.8930 1521.1013 1522.8703 1525.8823 1525.6225</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [372] 1523.9895 1517.8121 1510.7825 1506.4217 1505.5596 1509.4922 1517.4148</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [379] 1522.3617 1521.9067 1518.9575 1511.9173 1505.4117 1503.0022 1500.9283</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [386] 1499.9236 1500.8128 1503.3093 1508.7826 1515.4685 1523.0069 1529.0521</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [393] 1531.4183 1529.5416 1525.3973 1522.0117 1522.9126 1529.2140 1540.3495</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [400] 1554.3223 1568.2942 1580.1365 1592.5320 1602.8647 1608.3595 1609.8737</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [407] 1607.5536 1598.8217 1585.9624 1572.0047 1558.9479 1550.9824 1547.2964</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [414] 1545.6088 1542.2117 1538.7200 1538.8917 1543.4616 1550.0399 1557.1776</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [421] 1561.1525 1560.3643 1555.7520 1549.6525 1541.8227</span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
