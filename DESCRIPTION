@@ -13,7 +13,8 @@ Imports:
   rjd3toolkit (>= 3.2.1),
   rjd3filters (>= 2.0.0)
 Remotes:
-  github::rjdemetra/rjd3toolkit
+  github::rjdemetra/rjd3toolkit, 
+  github::rjdemetra/rjd3filters
 SystemRequirements: Java JRE 17 or higher
 License: EUPL
 URL: https://github.com/jdemetra/rjd3x11plus
