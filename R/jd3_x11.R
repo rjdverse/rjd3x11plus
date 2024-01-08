@@ -1,3 +1,7 @@
+JD3_X11PLUS<-"JD3_x11PLUS"
+JD3_X12PLUS<-"JD3_x12PLUS"
+JD3<-"JD3"
+
 
 #' Perform an X-11 like decomposition with any (non integer) periodicity.
 #'
@@ -13,10 +17,12 @@
 #' @param extreme.lsig lower boundary used for outlier correction in irregular.
 #' @param extreme.usig upper boundary used for outlier correction in irregular.
 #'
-#' @return
+#' @return An object of the class 'JD3_X11PLUS', containg the decomposition and the parameters
 #' @export
 #'
 #' @examples
+#' q<-x11plus(rjd3toolkit::ABS$X0.2.09.10.M, 12)
+#'
 x11plus<-function(y, period, mul=TRUE, trend.horizon=6, trend.degree=2,
                   trend.kernel=c("Henderson", "BiWeight", "TriWeight", "TriCube", "Uniform", "Triangular", "Epanechnikov", "Trapezoidal"),
                   trend.asymmetric=c("CutAndNormalize", "Direct", "MMSRE"),
@@ -27,8 +33,9 @@ x11plus<-function(y, period, mul=TRUE, trend.horizon=6, trend.degree=2,
   seas1=match.arg(seas.s1)
   tkernel=match.arg(trend.kernel)
   asym=match.arg(trend.asymmetric)
-  jrslt<-.jcall("jdplus/x11plus/base/r/X11Decomposition", "Ljdplus/x11plus/base/r/X11Decomposition$Results;", "process", as.numeric(y), period, mul
-                , as.integer(trend.horizon), as.integer(trend.degree),
+  jrslt<-.jcall("jdplus/x12plus/base/r/X11Decomposition", "Ljdplus/x12plus/base/r/X11Decomposition$Results;", "process",
+                as.numeric(y), period, mul,
+                as.integer(trend.horizon), as.integer(trend.degree),
                 tkernel, asym, seas0, seas1, extreme.lsig, extreme.usig)
   decomposition<-list(
     y=as.numeric(y),
@@ -38,33 +45,42 @@ x11plus<-function(y, period, mul=TRUE, trend.horizon=6, trend.degree=2,
     i=rjd3toolkit::.proc_vector(jrslt, "d13")
   )
   parameters<-list(
+    period=period,
     multiplicative=mul,
     trend.horizon=trend.horizon,
     trend.degree=trend.degree,
     trend.kernel=trend.kernel,
     trend.asymmetric=trend.asymmetric,
     extreme.lsig=extreme.lsig,
-    extreme.usig=extreme.usig
+    extreme.usig=extreme.usig,
+    seas.s0=seas.s0,
+    seas.s1=seas.s1
   )
 
   return(structure(list(
     decomposition=decomposition,
     parameters=parameters),
-    class="JD3_X11PLUS"))
+    class=c(JD3_X11PLUS, JD3)))
 }
 
 #' Apply Henderson linear filter
 #'
-#' @param y input time-series.
+#' @param x input time-series.
 #' @param length length of the Henderson filter.
 #' @param musgrave Boolean indicating if Musgrave asymmetric filters should be used.
 #' @param ic ic ratio: irregular/trend-cycle.
 #'
-#' @return
+#' @return A numeric array corresponding to the the trend
 #' @export
 #'
 #' @examples
-henderson<-function(y, length, musgrave=TRUE, ic=4.5){
-  return (.jcall("jdplus/x11plus/base/r/X11Decomposition", "[D", "henderson", as.numeric(y), as.integer(length), musgrave, ic))
+#' q<-x11plus(rjd3toolkit::ABS$X0.2.09.10.M, 12)
+#'
+#' henderson(q$decomposition$sa, 13)
+henderson<-function(x, length, musgrave=TRUE, ic=4.5){
+  result <- .jcall("jdplus/x12plus/base/r/X11Decomposition", "[D", "henderson",
+                   as.numeric(x), as.integer(length), musgrave, ic)
+  if(is.ts(x))
+    result <- ts(result,start = start(x), frequency = frequency(x))
+  return (result)
 }
-

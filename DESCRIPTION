@@ -1,7 +1,7 @@
 Package: rjd3x11plus
 Type: Package
 Title: Interface to 'JDemetra+ 3.0' Seasonal Adjustment Software
-Version: 1.0.0
+Version: 2.0.0
 Authors@R: c(
   person("Jean", "Palate", role = c("aut", "cre"),
                 email = "jean.palate@nbb.be"))
@@ -10,10 +10,14 @@ Depends:
   R (>= 3.6.0)
 Imports:
   rJava (>= 1.0-6),
-  rjd3toolkit (>= 3.0.1)
+  rjd3toolkit (>= 3.2.1),
+  rjd3filters (>= 2.0.0)
+Remotes:
+  github::rjdemetra/rjd3toolkit, 
+  github::rjdemetra/rjd3filters
 SystemRequirements: Java JRE 17 or higher
 License: EUPL
-URL: https://github.com/jdemetra/rjd3stl
+URL: https://github.com/jdemetra/rjd3x11plus
 LazyData: TRUE
 Suggests:
     knitr,
@@ -22,5 +26,10 @@ RoxygenNote: 7.2.3
 BugReports: https://github.com/jdemetra/rjdemetra3/issues
 Encoding: UTF-8
 Collate: 
+    'ic_r.R'
     'jd3_x11.R'
+    'macurves.R'
+    'utility.R'
+    'x11correction.R'
+    'x11plus_trend.R'
     'zzz.R'

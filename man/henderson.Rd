@@ -4,10 +4,10 @@
 \alias{henderson}
 \title{Apply Henderson linear filter}
 \usage{
-henderson(y, length, musgrave = TRUE, ic = 4.5)
+henderson(x, length, musgrave = TRUE, ic = 4.5)
 }
 \arguments{
-\item{y}{input time-series.}
+\item{x}{input time-series.}
 
 \item{length}{length of the Henderson filter.}
 
@@ -15,6 +15,14 @@ henderson(y, length, musgrave = TRUE, ic = 4.5)
 
 \item{ic}{ic ratio: irregular/trend-cycle.}
 }
+\value{
+A numeric array corresponding to the the trend
+}
 \description{
 Apply Henderson linear filter
+}
+\examples{
+q<-x11plus(rjd3toolkit::ABS$X0.2.09.10.M, 12)
+
+henderson(q$decomposition$sa, 13)
 }
