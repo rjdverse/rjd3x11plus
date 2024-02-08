@@ -34,7 +34,7 @@ x11_step <- x11plus_trend(b1, trend.coefs = lp_filter(horizon = 6, ic = 3.5),
 compare <- function(x, id, na.rm = TRUE){
   if (na.rm)
     x <- na.omit(x)
-  res = cbind(x, x11_step$user_defined[[id]])
+  res <- cbind(x, x11_step$user_defined[[id]])
   all.equal(res[,1], res[,2], check.attributes = FALSE)
 }
 compare(b1, "b1")
@@ -116,7 +116,7 @@ if (!exists("sa_2")) {
 compare <- function(x, id, na.rm = TRUE){
   if (na.rm)
     x <- na.omit(x)
-  res = cbind(x, x11_step$user_defined[[id]])
+  res <- cbind(x, x11_step$user_defined[[id]])
   all.equal(res[,1], res[,2], check.attributes = FALSE)
 }
 ud_var <- c("b1", "b2", "b3", "b4", "b4a", "b4d", "b5", 
