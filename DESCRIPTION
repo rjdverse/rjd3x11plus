@@ -11,7 +11,7 @@ Depends:
 Imports:
   rJava (>= 1.0-6),
   rjd3toolkit (>= 3.2.1),
-  rjd3filters (>= 2.0.0)
+  rjd3filters (>= 2.0.1)
 Remotes:
   github::rjdemetra/rjd3toolkit, 
   github::rjdemetra/rjd3filters
