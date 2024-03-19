@@ -105,6 +105,13 @@ select_trend_filter.default <- function(x, ..., freq) {
 #' @rdname select_trend_filter
 #' @export
 select_trend_filter.ts <- function(x, ..., length = 13){
-  select_trend_filter(ic_ratio(x, henderson(x, length = length, musgrave = FALSE)),
-                        freq = frequency(x))
+  icr <- ic_ratio(x, henderson(x, length = length, musgrave = FALSE))
+  freq <- frequency(x)
+  if (freq == 4) {
+    icr <- icr * 3
+  } else if (freq == 2) {
+    icr <- icr * 6
+  }
+  select_trend_filter(icr,
+                      freq = freq)
 }
