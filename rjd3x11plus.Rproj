@@ -23,4 +23,3 @@ PackageCheckArgs: --no-multiarch --as-cran
 PackageRoxygenize: rd,collate,namespace,vignette
 
 UseNativePipeOperator: Yes
-
