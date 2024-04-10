@@ -97,7 +97,7 @@ select_trend_filter.default <- function(x, ..., freq) {
   } else {
     if(freq == 12){
       c(icr = icr, length = 23)
-    }else{
+    } else{
       c(icr = icr, length = 7)
     }
   }
