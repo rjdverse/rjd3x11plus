@@ -13,8 +13,8 @@
 #' @export
 ic_ratio <- function(x, sc, mul = FALSE){
   remove_na <- is.na(x) | is.na(sc)
-  x = as.numeric(x)[!remove_na]
-  sc = as.numeric(sc)[!remove_na]
+  x <- as.numeric(x)[!remove_na]
+  sc <- as.numeric(sc)[!remove_na]
   result <- .jcall("jdplus/x12plus/base/r/X11Decomposition",
                    "D", "icratio",
                    x, sc, mul)
@@ -81,7 +81,7 @@ select_trend_filter <- function(x, ...){
 #' @rdname select_trend_filter
 #' @export
 select_trend_filter.default <- function(x, ..., freq) {
-  icr = x
+  icr <- x
   if (freq == 2) {
     return(c(icr = icr, length = 5))
   }
@@ -97,7 +97,7 @@ select_trend_filter.default <- function(x, ..., freq) {
   } else {
     if(freq == 12){
       c(icr = icr, length = 23)
-    }else{
+    } else{
       c(icr = icr, length = 7)
     }
   }
@@ -105,6 +105,13 @@ select_trend_filter.default <- function(x, ..., freq) {
 #' @rdname select_trend_filter
 #' @export
 select_trend_filter.ts <- function(x, ..., length = 13){
-  select_trend_filter(ic_ratio(x, henderson(x, length = length, musgrave = FALSE)),
-                        freq = frequency(x))
+  icr <- ic_ratio(x, henderson(x, length = length, musgrave = FALSE))
+  freq <- frequency(x)
+  if (freq == 4) {
+    icr <- icr * 3
+  } else if (freq == 2) {
+    icr <- icr * 6
+  }
+  select_trend_filter(icr,
+                      freq = freq)
 }

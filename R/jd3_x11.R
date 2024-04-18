@@ -29,10 +29,10 @@ x11plus<-function(y, period, mul=TRUE, trend.horizon=6, trend.degree=2,
                   seas.s0=c("S3X3", "S3X1", "S3X5", "S3X9", "S3X15"),
                   seas.s1=c("S3X5", "S3X3", "S3X1", "S3X9", "S3X15"),
                   extreme.lsig=1.5, extreme.usig=2.5){
-  seas0=match.arg(seas.s0)
-  seas1=match.arg(seas.s1)
-  tkernel=match.arg(trend.kernel)
-  asym=match.arg(trend.asymmetric)
+  seas0 <- match.arg(seas.s0)
+  seas1 <- match.arg(seas.s1)
+  tkernel <- match.arg(trend.kernel)
+  asym <- match.arg(trend.asymmetric)
   jrslt<-.jcall("jdplus/x12plus/base/r/X11Decomposition", "Ljdplus/x12plus/base/r/X11Decomposition$Results;", "process",
                 as.numeric(y), period, mul,
                 as.integer(trend.horizon), as.integer(trend.degree),

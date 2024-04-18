@@ -46,7 +46,7 @@ x11_extreme_values_corr <- function(x,
   }
 
   jx <- .r2jd_doubleseq(x_c)
-  x11context = J("jdplus/x12plus/base/core/X11Context")$
+  x11context <- J("jdplus/x12plus/base/core/X11Context")$
     builder()$
     mode(dmode)$
     period(P)$
