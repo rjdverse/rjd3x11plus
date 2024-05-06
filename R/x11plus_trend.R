@@ -37,7 +37,7 @@ x11plus_trend <- function(x, period = frequency(x),
   rightTrendFilter <- do.call(cbind, lapply(asy_filter, function(x){
     c(coef(x), rep(0, 2*length(asy_filter)- length(x)))
   }))
-  if(length(sym_filter) != 2*ncol(rightTrendFilter)+1){
+  if (length(sym_filter) != 2*ncol(rightTrendFilter)+1){
     stop(sprintf("The symmetric filter is of length %i but only %i asymmetric filters provided",
                  length(sym_filter),
                  2*ncol(rightTrendFilter)+1))
