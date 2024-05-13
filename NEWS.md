@@ -9,6 +9,6 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [2.0.0] - 2024-01-08
 
-[Unreleased]: https://github.com/rjdemetra/rjd3x11plus/compare/v2.0.0...HEAD
-[2.0.0]: https://github.com/rjdemetra/rjd3x11plus/releases/tag/v2.0.0
+[Unreleased]: https://github.com/rjdverse/rjd3x11plus/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/rjdverse/rjd3x11plus/releases/tag/v2.0.0
 
