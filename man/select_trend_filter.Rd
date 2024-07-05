@@ -13,7 +13,7 @@ select_trend_filter(x, ...)
 \method{select_trend_filter}{ts}(x, ..., length = 13)
 }
 \arguments{
-\item{x}{I/C ratio [ic_ratio()] or a time series}
+\item{x}{I/C ratio \code{\link[=ic_ratio]{ic_ratio()}} or a time series}
 
 \item{...}{further arguments passed to or from other methods.}
 
@@ -26,14 +26,15 @@ X-11 Selection of Trend Filter
 }
 \details{
 The following procedure is used in X-11 to select the length of the trend filter:
-
-1. Computes the I/C ratio, \eqn{icr} with an Henderson filter of length 13.
-
-2. The length depends on the value or \eqn{icr}:
-
-   * if \eqn{icr < 1} then the selected length is 9 for monthly data and 5 otherwise;
-   * if \eqn{1 \leq icr < 3.5} then the selected length is \eqn{freq + 1} where \eqn{freq} is the frequency of data (12 for monthly data, 4 for quarterly data...).
-   * if \eqn{icr \geq 3.5} then the selected length is 23 for monthly data and 7 otherwise.
+\enumerate{
+\item Computes the I/C ratio, \eqn{icr} with an Henderson filter of length 13.
+\item The length depends on the value or \eqn{icr}:
+\itemize{
+\item if \eqn{icr < 1} then the selected length is 9 for monthly data and 5 otherwise;
+\item if \eqn{1 \leq icr < 3.5} then the selected length is \eqn{freq + 1} where \eqn{freq} is the frequency of data (12 for monthly data, 4 for quarterly data...).
+\item if \eqn{icr \geq 3.5} then the selected length is 23 for monthly data and 7 otherwise.
+}
+}
 }
 \examples{
 # example code
