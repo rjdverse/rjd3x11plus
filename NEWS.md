@@ -7,8 +7,19 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [2.1.1] - 2024-07-12
+
+
+### Changed
+
+* New .jar
+
+## [2.1.0] - 2024-04-18
+
 ## [2.0.0] - 2024-01-08
 
-[Unreleased]: https://github.com/rjdemetra/rjd3x11plus/compare/v2.0.0...HEAD
-[2.0.0]: https://github.com/rjdemetra/rjd3x11plus/releases/tag/v2.0.0
+[Unreleased]: https://github.com/rjdverse/rjd3x11plus/compare/v2.1.1...HEAD
+[2.1.1]: https://github.com/rjdverse/rjd3x11plus/compare/v2.0.0...v2.1.1
+[2.1.0]: https://github.com/rjdverse/rjd3x11plus/compare/v2.0.0...2.1.0
+[2.0.0]: https://github.com/rjdverse/rjd3x11plus/releases/tag/v2.0.0
 

@@ -28,7 +28,7 @@ ic_ratio <- function(x, sc, mul = FALSE){
 #   gi <- calAbsMeanVariations(si, 1)
 #   icr = gi/gc
 #   freq = frequency(x)
-#   if(freq == 4){
+#   if (freq == 4){
 #     icr = icr * 3
 #   } else if (freq == 2){
 #     icr = icr * 6
@@ -41,7 +41,7 @@ ic_ratio <- function(x, sc, mul = FALSE){
 #     x1 = x
 #     x0 = lag(x, -lag)
 #     d = x1 - x0
-#     if(mul)
+#     if (mul)
 #       d = d/x0
 #     mean[lag] = sum(abs(d),na.rm = TRUE)
 #   }
@@ -95,9 +95,9 @@ select_trend_filter.default <- function(x, ..., freq) {
       c(icr = icr, length = 5)
     }
   } else {
-    if(freq == 12){
+    if (freq == 12){
       c(icr = icr, length = 23)
-    } else{
+    } else {
       c(icr = icr, length = 7)
     }
   }

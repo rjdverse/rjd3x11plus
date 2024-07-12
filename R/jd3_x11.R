@@ -80,7 +80,7 @@ x11plus<-function(y, period, mul=TRUE, trend.horizon=6, trend.degree=2,
 henderson<-function(x, length, musgrave=TRUE, ic=4.5){
   result <- .jcall("jdplus/x12plus/base/r/X11Decomposition", "[D", "henderson",
                    as.numeric(x), as.integer(length), musgrave, ic)
-  if(is.ts(x))
+  if (is.ts(x))
     result <- ts(result,start = start(x), frequency = frequency(x))
-  return (result)
+  return(result)
 }
