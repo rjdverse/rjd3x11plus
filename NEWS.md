@@ -11,7 +11,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 * New .jar
 
-## [2.1.0] - 2024-04-418
+## [2.1.0] - 2024-04-18
 
 ## [2.0.0] - 2024-01-08
 
