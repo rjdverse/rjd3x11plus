@@ -25,7 +25,7 @@ rjd3filters allows to reproduce the entire X-11 process
 ```{r}
 library("rjd3filters")
 library("rjd3x11plus")
-b1 <- rjd3toolkit::ABS$X0.2.09.10.M 
+b1 <- rjd3toolkit::ABS$X0.2.09.10.M
 x11_step <- x11plus_trend(b1, trend.coefs = lp_filter(horizon = 6, ic = 3.5),
                              extreme.lsig = 300, extreme.usig = 400, mul = FALSE,
                              seas.s0 = "S3X3",
@@ -119,10 +119,10 @@ compare <- function(x, id, na.rm = TRUE){
   res <- cbind(x, x11_step$user_defined[[id]])
   all.equal(res[,1], res[,2], check.attributes = FALSE)
 }
-ud_var <- c("b1", "b2", "b3", "b4", "b4a", "b4d", "b5", 
-            "b6", "b7", "b8", "b9", "b10", "b11", "b13", "b17", "b20", "c1", 
-            "c2", "c4", "c5", "c6", "c7", "c9", "c10", "c11", "c13", 
-            "c17", "c20", "d1", "d2", "d4", "d5", "d6", "d7", "d8", 
+ud_var <- c("b1", "b2", "b3", "b4", "b4a", "b4d", "b5",
+            "b6", "b7", "b8", "b9", "b10", "b11", "b13", "b17", "b20", "c1",
+            "c2", "c4", "c5", "c6", "c7", "c9", "c10", "c11", "c13",
+            "c17", "c20", "d1", "d2", "d4", "d5", "d6", "d7", "d8",
             "d10", "d11", "d12", "d13", "d10bis", "d11bis")
 b1 <- rjd3toolkit::ABS$X0.2.09.10.M  # b1
 x11_step <- x11plus_trend(b1, trend.coefs = lp_filter(horizon = 6, ic = 3.5),
@@ -138,13 +138,10 @@ compare(b2, "b2")
 b3 <- si_1 * b1
 compare(b3, "b3")
 
-b4a <- M3X3_s * 
-  b3
+b4a <- M3X3_s * b3
 #compare(b4a, "b4a")
 
-b4norm <- b4a  - 
-  impute_last_obs(finite_filters(M2X12), n = 6, nperiod = 1) * 
-  b4a 
+b4norm <- b4a - impute_last_obs(finite_filters(M2X12), n = 6, nperiod = 1) * b4a
 b4d <- b3 - b4norm
 #compare(b4d, "b4d")
 
@@ -158,9 +155,7 @@ compare(window(b4, start = start(na.omit(b3)), end = end(na.omit(b3))),
         na.rm = FALSE)
 
 b5a <- M3X3_s * b4g
-b5 <- b5a  - 
-  impute_last_obs(finite_filters(M2X12), n = 6, nperiod = 1) * 
-  b5a 
+b5 <- b5a - impute_last_obs(finite_filters(M2X12), n = 6, nperiod = 1) * b5a
 b5 <- filter(b5, impute_last_obs(moving_average(c(rep(0,6),1, rep(0,6)), lags = -6),
                                  n = 6, nperiod = 12), remove_missing = FALSE)
 compare(b5, "b5")
@@ -173,8 +168,7 @@ b8 <- b1 - b7
 compare(b8, "b8")
 
 b9a <- M3X5_s * b8
-b9c <-  b9a - impute_last_obs(finite_filters(M2X12), n = 6, nperiod = 1) * 
-  b9a 
+b9c <-  b9a - impute_last_obs(finite_filters(M2X12), n = 6, nperiod = 1) * b9a
 b9d <-  b8 - b9c
 corr <- x11_extreme_values_corr(x = b9d,
                                 corrected_s = b8, mul = FALSE, start = 0)
@@ -184,8 +178,7 @@ b9g[!is.nan(b9)] <- b9[!is.nan(b9)]
 compare(b9, "b9", na.rm = FALSE)
 
 b10a <- M3X5_s * b9g
-b10 <-  b10a - impute_last_obs(finite_filters(M2X12), n = 6, nperiod = 1) * 
-  b10a 
+b10 <-  b10a - impute_last_obs(finite_filters(M2X12), n = 6, nperiod = 1) * b10a
 b11 <-  b1 - b10
 b13 <-  b11 - b7
 compare(b10,  "b10")
@@ -245,8 +238,7 @@ compare(d8 , "d8")
 d9bis <- d1 - d7
 d10bis <- M3X5_s * d9bis
 #compare(d10bis , "d10bis")
-d10 <- d10bis - impute_last_obs(finite_filters(M2X12), n = 6, nperiod = 1) * 
-  d10bis 
+d10 <- d10bis - impute_last_obs(finite_filters(M2X12), n = 6, nperiod = 1) * d10bis
 compare(d10 , "d10")
 d11bis <- d1 - d10
 #compare(d11bis , "d11bis")
@@ -257,4 +249,3 @@ compare(d12 , "d12")
 d13 <- d11 - d12
 compare(d13 , "d13")
 ```
-
