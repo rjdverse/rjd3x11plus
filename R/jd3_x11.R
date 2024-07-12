@@ -82,5 +82,5 @@ henderson<-function(x, length, musgrave=TRUE, ic=4.5){
                    as.numeric(x), as.integer(length), musgrave, ic)
   if (is.ts(x))
     result <- ts(result,start = start(x), frequency = frequency(x))
-  return (result)
+  return(result)
 }

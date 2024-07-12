@@ -20,7 +20,7 @@ x11_extreme_values_corr(
 
 \item{corrected_s}{other time series if the series being corrected is different from x.}
 
-\item{period}{the period of the input time series if `x` is not a `"ts"` object.}
+\item{period}{the period of the input time series if \code{x} is not a \code{"ts"} object.}
 
 \item{lsigma, usigma}{the lower and the upper sigma boundaries for the detection of extreme values.}
 
