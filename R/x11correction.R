@@ -33,7 +33,7 @@ x11_extreme_values_corr <- function(x,
     }
   }
 
-  P <- .jcast(new( J("java.lang.Double"), as.character(period)),
+  P <- .jcast(new(J("java.lang.Double"), as.character(period)),
               "java.lang.Number")
   dmode <- .jcall("jdplus/sa/base/api/DecompositionMode",
                   "Ljdplus/sa/base/api/DecompositionMode;",

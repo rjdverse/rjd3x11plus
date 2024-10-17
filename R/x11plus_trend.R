@@ -24,7 +24,7 @@ x11plus_trend <- function(x, period = frequency(x),
                 trend.coefs,  mul=TRUE,
                 seas.s0=c("S3X3", "S3X1", "S3X5", "S3X9", "S3X15"),
                 seas.s1=c("S3X5", "S3X3", "S3X1", "S3X9", "S3X15"),
-                extreme.lsig=1.5, extreme.usig=2.5, userdefined = NULL){
+                extreme.lsig=1.5, extreme.usig=2.5, userdefined = NULL) {
   seas.s0<-match.arg(toupper(seas.s0)[1], choices = c("S3X3", "S3X1", "S3X5", "S3X9", "S3X15"))
   seas.s1<-match.arg(toupper(seas.s1)[1], choices = c("S3X3", "S3X1", "S3X5", "S3X9", "S3X15"))
 
@@ -34,10 +34,10 @@ x11plus_trend <- function(x, period = frequency(x),
 
   sym_filter <- trend.coefs@sfilter
   asy_filter <- trend.coefs@rfilters
-  rightTrendFilter <- do.call(cbind, lapply(asy_filter, function(x){
+  rightTrendFilter <- do.call(cbind, lapply(asy_filter, function(x) {
     c(coef(x), rep(0, 2*length(asy_filter)- length(x)))
   }))
-  if (length(sym_filter) != 2*ncol(rightTrendFilter)+1){
+  if (length(sym_filter) != 2*ncol(rightTrendFilter)+1) {
     stop(sprintf("The symmetric filter is of length %i but only %i asymmetric filters provided",
                  length(sym_filter),
                  2*ncol(rightTrendFilter)+1))

@@ -28,7 +28,7 @@ x11plus<-function(y, period, mul=TRUE, trend.horizon=6, trend.degree=2,
                   trend.asymmetric=c("CutAndNormalize", "Direct", "MMSRE"),
                   seas.s0=c("S3X3", "S3X1", "S3X5", "S3X9", "S3X15"),
                   seas.s1=c("S3X5", "S3X3", "S3X1", "S3X9", "S3X15"),
-                  extreme.lsig=1.5, extreme.usig=2.5){
+                  extreme.lsig=1.5, extreme.usig=2.5) {
   seas0 <- match.arg(seas.s0)
   seas1 <- match.arg(seas.s1)
   tkernel <- match.arg(trend.kernel)
@@ -77,7 +77,7 @@ x11plus<-function(y, period, mul=TRUE, trend.horizon=6, trend.degree=2,
 #' q<-x11plus(rjd3toolkit::ABS$X0.2.09.10.M, 12)
 #'
 #' henderson(q$decomposition$sa, 13)
-henderson<-function(x, length, musgrave=TRUE, ic=4.5){
+henderson<-function(x, length, musgrave=TRUE, ic=4.5) {
   result <- .jcall("jdplus/x12plus/base/r/X11Decomposition", "[D", "henderson",
                    as.numeric(x), as.integer(length), musgrave, ic)
   if (is.ts(x))
