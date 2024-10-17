@@ -31,7 +31,7 @@ x11_step <- x11plus_trend(b1, trend.coefs = lp_filter(horizon = 6, ic = 3.5),
                              seas.s0 = "S3X3",
                              seas.s1 = "S3X5",
                              userdefined = sprintf("b%i", 1:11))
-compare <- function(x, id, na.rm = TRUE){
+compare <- function(x, id, na.rm = TRUE) {
   if (na.rm)
     x <- na.omit(x)
   res <- cbind(x, x11_step$user_defined[[id]])
@@ -113,7 +113,7 @@ if (!exists("sa_2")) {
   s_2_f <- impute_last_obs(s_2_demean, n = 6, nperiod = 12)
   sa_2 <- 1 - s_2_f
 }
-compare <- function(x, id, na.rm = TRUE){
+compare <- function(x, id, na.rm = TRUE) {
   if (na.rm)
     x <- na.omit(x)
   res <- cbind(x, x11_step$user_defined[[id]])
