@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # rjd3x11plus: extended x11
 
 <!-- badges: start -->
+[![Mentioned in Awesome Official Statistics ](https://awesome.re/mentioned-badge.svg)](http://www.awesomeofficialstatistics.org)
 <!-- badges: end -->
 
 
