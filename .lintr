@@ -31,6 +31,7 @@ linters: lintr::all_linters(
         numeric_leading_zero_linter = NULL,
         todo_comment_linter = NULL,
         fixed_regex_linter = NULL,
+        function_argument_linter = NULL,
         unnecessary_lambda_linter = NULL,
         paste_linter = NULL,
         return_linter = NULL,
