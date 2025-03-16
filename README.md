@@ -1,9 +1,20 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rjd3x11plus: extended x11
+# {rjd3x11plus}: extended x11
 
 <!-- badges: start -->
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/rjd3x11plus)](https://CRAN.R-project.org/package=rjd3x11plus)
+[![Mentioned in Awesome Official
+Statistics](https://awesome.re/mentioned-badge.svg)](http://www.awesomeofficialstatistics.org)
+
+[![R-CMD-check](https://github.com/rjdverse/rjd3x11plus/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rjdverse/rjd3x11plus/actions/workflows/R-CMD-check.yaml)
+[![lint](https://github.com/rjdverse/rjd3x11plus/actions/workflows/lint.yaml/badge.svg)](https://github.com/rjdverse/rjd3x11plus/actions/workflows/lint.yaml)
+
+[![GH Pages
+built](https://github.com/rjdverse/rjd3x11plus/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/rjdverse/rjd3x11plus/actions/workflows/pkgdown.yaml)
 <!-- badges: end -->
 
 ## Installation
@@ -20,7 +31,6 @@ To get the current stable version (from the latest release):
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("rjdverse/rjd3toolkit@*release")
 remotes::install_github("rjdverse/rjd3x11plus@*release")
 ```
 
@@ -32,7 +42,7 @@ install.packages("rjd3x11plus", repos = c("https://rjdverse.r-universe.dev", "ht
 
 ### Development version
 
-You can install the development version of **rjd3x11plus** from
+You can install the development version of **{rjd3x11plus}** from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -57,4 +67,4 @@ should be added or updated.
 
 The code of this project is licensed under the [European Union Public
 Licence
-(EUPL)](https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12).
+(EUPL)](https://interoperable-europe.ec.europa.eu:443/collection/eupl/eupl-text-eupl-12).
