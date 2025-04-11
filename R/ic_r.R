@@ -5,7 +5,7 @@
 #' @param mul boolean indicating if the decomposition is multiplicative or additive.
 #'
 #' @examples
-#' q<-x11plus(rjd3toolkit::retail$AllOtherGenMerchandiseStores, 12)
+#' q<-x11plus(rjd3toolkit::Retail$AllOtherGenMerchandiseStores, 12)
 #' x <- q$decomposition$sa
 #' sc <- henderson(x, length = 13, musgrave = FALSE)
 #' ic_ratio(x, sc)
@@ -66,7 +66,7 @@ ic_ratio <- function(x, sc, mul = FALSE){
 #'    * if \eqn{icr \geq 3.5} then the selected length is 23 for monthly data and 7 otherwise.
 #' @examples
 #' # example code
-#' s<-rjd3toolkit::retail$AllOtherGenMerchandiseStores
+#' s<-rjd3toolkit::Retail$AllOtherGenMerchandiseStores
 #' q<-x11plus(s, 12)
 #' x <- ts(data=q$decomposition$sa, start=start(s), frequency=frequency(s))
 #' sc <- henderson(x, length = 13, musgrave = FALSE)
