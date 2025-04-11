@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rjd3x11plus</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.3.0</span>
       </span>
     </div>
 
@@ -113,7 +113,7 @@ the real-time asymmetric filter to the symmetric filter. Can be a, object of cla
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">q</span><span class="op">&lt;-</span><span class="fu"><a href="x11plus.html">x11plus</a></span><span class="op">(</span><span class="fu">rjd3toolkit</span><span class="fu">::</span><span class="va"><a href="https://rjdverse.github.io/rjd3toolkit/reference/retail.html" class="external-link">retail</a></span><span class="op">$</span><span class="va">AllOtherGenMerchandiseStores</span>, <span class="fl">12</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">q</span><span class="op">&lt;-</span><span class="fu"><a href="x11plus.html">x11plus</a></span><span class="op">(</span><span class="fu">rjd3toolkit</span><span class="fu">::</span><span class="va"><a href="https://rjdverse.github.io/rjd3toolkit/reference/Retail.html" class="external-link">Retail</a></span><span class="op">$</span><span class="va">AllOtherGenMerchandiseStores</span>, <span class="fl">12</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="va">q</span><span class="op">$</span><span class="va">decomposition</span><span class="op">$</span><span class="va">sa</span></span></span>
 <span class="r-in"><span><span class="va">decomposition_lp</span> <span class="op">&lt;-</span> <span class="fu">x11plus_trend</span><span class="op">(</span><span class="va">x</span>, trend.coefs <span class="op">=</span> <span class="fu">rjd3filters</span><span class="fu">::</span><span class="fu"><a href="https://rjdverse.github.io/rjd3filters/reference/lp_filter.html" class="external-link">lp_filter</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">decomposition_rkhs</span> <span class="op">&lt;-</span> <span class="fu">x11plus_trend</span><span class="op">(</span><span class="va">x</span>, trend.coefs <span class="op">=</span> <span class="fu">rjd3filters</span><span class="fu">::</span><span class="fu"><a href="https://rjdverse.github.io/rjd3filters/reference/rkhs_filter.html" class="external-link">rkhs_filter</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
