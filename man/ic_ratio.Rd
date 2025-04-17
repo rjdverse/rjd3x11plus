@@ -17,7 +17,7 @@ ic_ratio(x, sc, mul = FALSE)
 Compute IC-Ratio
 }
 \examples{
-q<-x11plus(rjd3toolkit::retail$AllOtherGenMerchandiseStores, 12)
+q<-x11plus(rjd3toolkit::Retail$AllOtherGenMerchandiseStores, 12)
 x <- q$decomposition$sa
 sc <- henderson(x, length = 13, musgrave = FALSE)
 ic_ratio(x, sc)

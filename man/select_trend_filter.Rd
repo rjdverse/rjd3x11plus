@@ -38,7 +38,7 @@ The following procedure is used in X-11 to select the length of the trend filter
 }
 \examples{
 # example code
-s<-rjd3toolkit::retail$AllOtherGenMerchandiseStores
+s<-rjd3toolkit::Retail$AllOtherGenMerchandiseStores
 q<-x11plus(s, 12)
 x <- ts(data=q$decomposition$sa, start=start(s), frequency=frequency(s))
 sc <- henderson(x, length = 13, musgrave = FALSE)
