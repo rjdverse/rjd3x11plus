@@ -37,7 +37,7 @@ the real-time asymmetric filter to the symmetric filter. Can be a, object of cla
 Perform the X-11 decomposition using custom trend filter
 }
 \examples{
-q<-x11plus(rjd3toolkit::retail$AllOtherGenMerchandiseStores, 12)
+q<-x11plus(rjd3toolkit::Retail$AllOtherGenMerchandiseStores, 12)
 x <- q$decomposition$sa
 decomposition_lp <- x11plus_trend(x, trend.coefs = rjd3filters::lp_filter())
 decomposition_rkhs <- x11plus_trend(x, trend.coefs = rjd3filters::rkhs_filter())
