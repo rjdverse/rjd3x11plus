@@ -18,11 +18,23 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [2.1.0] - 2024-04-18
 
+### Changed
+
+* New .jar
+
 
 ## [2.0.0] - 2024-01-08
 
+### Changed
+
+* New .jar
+
 
 ## [1.0.0] - 2023-07-06
+
+### Changed
+
+* New .jar
 
 
 [Unreleased]: https://github.com/rjdverse/rjd3x11plus/compare/v2.1.1...HEAD
