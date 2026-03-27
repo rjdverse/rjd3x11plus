@@ -34,3 +34,4 @@ Collate:
     'x11correction.R'
     'x11plus_trend.R'
     'zzz.R'
+VignetteBuilder: knitr
