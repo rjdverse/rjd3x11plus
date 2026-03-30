@@ -44,15 +44,14 @@ x11plus_trend <- function(x, period = frequency(x),
   }
   rtrendf <- rjd3toolkit::.r2jd_matrix(rightTrendFilter)
 
-  ctrendf <- .r2jd_doubleseq(coef(sym_filter))
+  ctrendf <- coef(sym_filter)
   # # check :
   # jf <- J("jdplus.filters.base.core.filters.Filtering")$of(ctrendf, ltrendf)
   # .jd2r_finitefilters(jf)
   # trend.coefs
 
-  x11decomp <- J("jdplus/x12plus/base/r/X11Decomposition")
 
-  jrslt <- x11decomp$trendX11(as.numeric(x), period, mul,
+  jrslt <- .jcall("jdplus/x12plus/base/r/X11Decomposition", "Ljdplus/x12plus/base/r/X11Decomposition$Results;", "trendX11", as.numeric(x), period, mul,
                              ctrendf, rtrendf,
                              seas.s0, seas.s1, extreme.lsig, extreme.usig)
   decomposition <- cbind(x,

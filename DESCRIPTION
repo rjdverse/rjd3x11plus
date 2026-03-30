@@ -15,7 +15,7 @@ Imports:
 Remotes: 
     github::rjdverse/rjd3toolkit,
     github::rjdverse/rjd3filters
-SystemRequirements: Java (>= 17)
+SystemRequirements: Java (>= 21)
 License: file LICENSE
 URL: https://github.com/rjdverse/rjd3x11plus, https://rjdverse.github.io/rjd3x11plus
 LazyData: TRUE
@@ -34,3 +34,5 @@ Collate:
     'x11correction.R'
     'x11plus_trend.R'
     'zzz.R'
+VignetteBuilder: knitr
+
