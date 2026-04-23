@@ -1,7 +1,7 @@
 Package: rjd3x11plus
 Type: Package
 Title: Interface to 'JDemetra+ 3.x' time series analysis software
-Version: 2.4.0
+Version: 2.4.1
 Authors@R: c(
   person("Jean", "Palate", role = c("aut", "cre"),
                 email = "jean.palate@nbb.be"))
@@ -10,12 +10,11 @@ Depends:
   R (>= 4.1.0)
 Imports:
   rJava (>= 1.0-6),
-  rjd3toolkit (>= 3.6.0),
-  rjd3filters (>= 2.3.0)
+  rjd3toolkit (>= 3.7.1),
+  rjd3filters (>= 2.4.0.9000)
 Remotes: 
-    github::rjdverse/rjd3toolkit,
     github::rjdverse/rjd3filters
-SystemRequirements: Java (>= 17)
+SystemRequirements: Java (>= 21)
 License: file LICENSE
 URL: https://github.com/rjdverse/rjd3x11plus, https://rjdverse.github.io/rjd3x11plus
 LazyData: TRUE
@@ -34,3 +33,5 @@ Collate:
     'x11correction.R'
     'x11plus_trend.R'
     'zzz.R'
+
+
